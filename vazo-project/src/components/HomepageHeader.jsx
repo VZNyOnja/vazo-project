@@ -1,5 +1,5 @@
 import './HomepageHeader.css';
-import LogoVazo from '/logo-vazo.png';
+import LogoVazo from '/images/logo-vazo.png';
 import { NavLink } from 'react-router';
 
 // Header des deux pages d'accueil

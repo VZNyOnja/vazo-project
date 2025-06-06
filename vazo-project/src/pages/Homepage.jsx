@@ -1,4 +1,4 @@
-import { HomepageHeader } from "./components/HomepageHeader";
+import { HomepageHeader } from "../components/HomepageHeader";
 
 export function Homepage() {
   return (
