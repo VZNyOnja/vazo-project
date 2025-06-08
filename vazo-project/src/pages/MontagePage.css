@@ -1,0 +1,120 @@
+/* Montserrat, Raleway, Fira Sans font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* CSS du left sidebar */
+.sidebar {
+  display: flex;
+  /* justify-content: center; */
+  padding-top: 100px;
+  flex-direction: column;
+
+  position: fixed;
+  top: 0;
+  left: 48px;
+  bottom: 0;
+
+  z-index: 90;
+}
+
+.edit {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.edit-icon {
+  width: 48px;
+}
+
+.edit-name {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* CSS du montage */
+.montage-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.montage-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.video {
+  width: 800px;
+  margin-bottom: 32px;
+}
+
+/* CSS de l'audio controls */
+.audio-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 600px;
+  padding: 4px 128px;
+  margin-bottom: 40px;
+  background-color: #EFEFEF;
+}
+
+/* Spécifier le css du bouton play car il est trop 
+long par rapport aux autres */
+.play {
+  height: 36px;
+}
+
+.control-icon {
+  width: 40px;
+  cursor: pointer;
+}
+
+/* CSS du timeline */
+.timeline {
+  width: 1000px;
+  height: 86px;
+  background-color: #EFEFEF;
+
+  position: relative;
+}
+
+.play-mark {
+  position: absolute;
+  margin-left: 20px;
+}
+
+.playzone {
+  width: 32px;
+  margin-top: -28px;
+  position: absolute;
+}
+
+.line {
+  width: 4px;
+  height: 86px;
+  margin-left: 13.5px;
+  margin-top: -4px;
+  position: absolute;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 92px;
+  padding-right: 92px;
+  margin-top: 8px;
+  height: 92px;
+}
+
+.time-ms {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}

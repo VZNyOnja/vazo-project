@@ -1,6 +1,6 @@
-import './MainHeader.css';
 import LogoVazo from '/images/logo-vazo.png';
 import { NavLink } from 'react-router';
+import './MainHeader.css';
 
 // Header de plusieurs pages
 export function MainHeader() {

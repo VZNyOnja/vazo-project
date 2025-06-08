@@ -1,5 +1,5 @@
 import { MainHeader } from '../components/MainHeader';
-import './TeleverserPage.css'
+import './TeleverserPage.css';
 
 // La page téléverser
 export function TeleverserPage() {
