@@ -1,5 +1,6 @@
 import { HomepageHeader } from "../components/HomepageHeader";
 import './Homepage.css';
+import ImageSlider from "./ImageSlider";
 
 export function Homepage() {
   return (
@@ -13,10 +14,9 @@ export function Homepage() {
           <div className="introducing">
             <div className="app-info">
               <h2 className="welcome">Bienvenue sur Vazo</h2>
-              <p className="about-app">Une plateforme où vous pouvez convertir vos audios en vidéos lyrics captivantes</p>
+              <p className="about-app">Une plateforme où vous pouvez convertir vos audios en vidéos lyrics captivantes et écouter vos musiques.</p>
             </div>
-
-            <img className="welcoming-image" src="/images/human-listen-to-music.png" alt="image d'un gars en train d'écouter une chanson" />
+            <ImageSlider />
           </div>
 
             <button className="commencer-button">Commencer</button>

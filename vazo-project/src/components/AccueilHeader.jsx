@@ -1,11 +1,11 @@
 import LogoVazo from '/images/logo-vazo.png';
 import { NavLink } from 'react-router';
-import './HomepageHeader.css';
+import './AccueilHeader.css';
 
-// Header des deux pages d'accueil
-export function HomepageHeader() {
+// Header de la page d'accueil
+export function AccueilHeader() {
   return (
-    <div className="header">
+    <div className="header-accueil">
       <div className="left-section">
         <NavLink to="/" className="header-link">
           <img className="logo-vazo" src={LogoVazo} alt="C'est le logo de l'application Vazo" />
@@ -13,8 +13,6 @@ export function HomepageHeader() {
         </NavLink>
       </div>
       <div className="right-section">
-        <button className="connexion-button sign-in">Se connecter</button>
-        <button className="connexion-button sign-up">S&#39;inscrire</button>
         <img className="logo-ispm" src="/images/logo-ispm.png" alt="Logo ISPM" />
       </div>
     </div>

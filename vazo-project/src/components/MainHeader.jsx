@@ -34,9 +34,12 @@ export function MainHeader() {
             Partager
           </button>
         </div>
+
         <NavLink>
           <img className="setting-icon" src="/images/parametre.png" alt="icône-parametre" />
         </NavLink>
+
+        <img className="logo-ispm" src="/images/logo-ispm.png" alt="Logo ISPM" />
       </div>
     </div>
   );

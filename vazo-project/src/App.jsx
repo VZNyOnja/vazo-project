@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router'
 import { Homepage } from './pages/Homepage';
 import { TeleverserPage } from './pages/TeleverserPage';
 import { MontagePage } from './pages/MontagePage';
+import { PageAccueil } from './pages/PageAccueil';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Route path="homepage" element={<Homepage />} />
       <Route path="televerser-page" element={<TeleverserPage />} />
       <Route path="montage-page" element={<MontagePage />} />
+      <Route path="accueil" element={<PageAccueil />} />
     </Routes>
   )
 }

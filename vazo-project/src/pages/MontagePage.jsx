@@ -7,7 +7,7 @@ export function MontagePage() {
       <title>Montage</title>
 
       <MainHeader />
-
+      
       {/* Sidebar d'où il y a les modifications pour le montage */}
       <div className="sidebar">
         <div className="edit">
@@ -45,7 +45,7 @@ export function MontagePage() {
             <img className="control-icon" src="/images/stop.png" alt="icône" />
             <img className="control-icon" src="/images/retour.png" alt="icône" />
             <img className="control-icon" src="/images/previous.png" alt="icône" />
-            <img className="control-icon play" src="/images/play.png" alt="icône" />
+            {/* <img className="control-icon play" src="/images/play.png" alt="icône" /> */}
             <img className="control-icon" src="/images/pause.png" alt="icône" />
             <img className="control-icon" src="/images/next.png" alt="icône" />
             <img className="control-icon" src="/images/continuer.png" alt="icône" />

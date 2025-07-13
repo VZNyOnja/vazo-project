@@ -4,13 +4,15 @@
 /* CSS du left sidebar */
 .sidebar {
   display: flex;
-  /* justify-content: center; */
-  padding-top: 100px;
   flex-direction: column;
+  /* background-color: red; */
+  /* padding: 128px 12px; */
+  padding-top: 128px;
+  width: 98px;
 
   position: fixed;
   top: 0;
-  left: 48px;
+  left: 0;
   bottom: 0;
 
   z-index: 90;
@@ -20,18 +22,18 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   cursor: pointer;
 }
 
 .edit-icon {
-  width: 48px;
+  width: 24px;
 }
 
 .edit-name {
   font-family: "Raleway", sans-serif;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 /* CSS du montage */
@@ -39,7 +41,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 100px;
+  padding-top: 40px;
 }
 
 .montage-container {
@@ -51,7 +53,7 @@
 
 .video {
   width: 800px;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 /* CSS de l'audio controls */
@@ -59,27 +61,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 600px;
+  width: 400px;
   padding: 4px 128px;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   background-color: #EFEFEF;
 }
 
-/* Spécifier le css du bouton play car il est trop 
-long par rapport aux autres */
-.play {
-  height: 36px;
-}
+/* .play {
+  height: 24px;
+} */
 
 .control-icon {
-  width: 40px;
+  width: 24px;
   cursor: pointer;
 }
 
 /* CSS du timeline */
 .timeline {
   width: 1000px;
-  height: 86px;
+  height: 72px;
   background-color: #EFEFEF;
 
   position: relative;
@@ -91,15 +91,16 @@ long par rapport aux autres */
 }
 
 .playzone {
-  width: 32px;
-  margin-top: -28px;
+  width: 24px;
+  margin-top: -24px;
+  margin-left: 3.5px;
   position: absolute;
 }
 
 .line {
-  width: 4px;
-  height: 86px;
-  margin-left: 13.5px;
+  width: 3px;
+  height: 72px;
+  margin-left: 14px;
   margin-top: -4px;
   position: absolute;
 }
@@ -116,5 +117,5 @@ long par rapport aux autres */
 .time-ms {
   font-family: "Fira Sans", sans-serif;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 400;
 }
