@@ -5,36 +5,51 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background-image: linear-gradient(
+    136.16deg,
+    #A9EAED 20%,
+    #CCA6FF 70%
+  ); */
+  background-image: url("/images/watercolor.jpg");
+  background-size: cover;
+  min-height: 100vh;
 }
 
 .homepage-container {
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
-  margin-top: 128px;
+  /* margin-top: 128px; */
+  transform: translateY(10%);
 }
 
 .introducing {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 800px;
   /* margin-bottom: 32px; */
+  min-width: 900px;
 }
 
 .app-info {
-  width: 448px;
+  width: 400px;
 }
 
 .welcome {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 30px;
   margin-bottom: 0;
+  color: rgb(92, 88, 88);
+}
+
+.welcome .vazo-span {
+  font-family: "Montserrat", sans-serif;
+  color: black;
 }
 
 .about-app {
-  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 16px;
   width: 400px;
   margin-top: 0;
@@ -45,13 +60,14 @@
 }
 
 .commencer-button {
-  font-family: "Fira Sans", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
   font-size: 16px;
   color: white;
-  background-color: #387AA3;
+  background-color: #8187DC;
   padding: 12px 48px;
   border: none;
-  border-radius: 4px;
+  border-radius: 24px;
   margin-top: 64px;
   cursor: pointer;
 }

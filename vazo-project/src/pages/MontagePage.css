@@ -16,6 +16,7 @@
   bottom: 0;
 
   z-index: 90;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .edit {
@@ -62,18 +63,22 @@
   justify-content: space-between;
   align-items: center;
   width: 400px;
+  height: 40px;
   padding: 4px 128px;
   margin-bottom: 32px;
   background-color: #EFEFEF;
 }
 
-/* .play {
-  height: 24px;
-} */
-
 .control-icon {
   width: 24px;
   cursor: pointer;
+}
+
+.pause {
+  border-radius: 8px;
+  background-color: rgb(200, 192, 192);
+  padding: 10px;
+  border-radius: 64px;
 }
 
 /* CSS du timeline */

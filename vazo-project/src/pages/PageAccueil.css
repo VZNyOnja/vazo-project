@@ -22,10 +22,20 @@
   padding-left: 8px;
 }
 
-.menu {
+.profile-container {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   margin-bottom: 8px;
+}
+
+.profile-container .profile-image {
+  width: 64px;
+  border-radius: 32px;
+  
+}
+
+.profile-container .profile-name {
+
 }
 
 .composant-menu {
@@ -68,7 +78,7 @@
 }
 
 .importer-fichier-button {
-  background-color: #387AA3;
+  background-color: #8187DC;
   font-style: 18px;
   font-family: "Raleway", sans-serif;
   font-weight: 600;

@@ -43,12 +43,12 @@ export function MontagePage() {
           
           <div className="audio-controls">
             <img className="control-icon" src="/images/stop.png" alt="icône" />
-            <img className="control-icon" src="/images/retour.png" alt="icône" />
+            {/* <img className="control-icon" src="/images/retour.png" alt="icône" /> */}
             <img className="control-icon" src="/images/previous.png" alt="icône" />
             {/* <img className="control-icon play" src="/images/play.png" alt="icône" /> */}
-            <img className="control-icon" src="/images/pause.png" alt="icône" />
+            <img className="control-icon pause" src="/images/pause.png" alt="icône" />
             <img className="control-icon" src="/images/next.png" alt="icône" />
-            <img className="control-icon" src="/images/continuer.png" alt="icône" />
+            {/* <img className="control-icon" src="/images/continuer.png" alt="icône" /> */}
           </div>
           
           <div className="timeline">

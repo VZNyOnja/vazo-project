@@ -1,5 +1,6 @@
 import { HomepageHeader } from "../components/HomepageHeader";
 import './Homepage.css';
+import { NavLink } from 'react-router';
 import ImageSlider from "./ImageSlider";
 
 export function Homepage() {
@@ -13,13 +14,17 @@ export function Homepage() {
         <div className="homepage-container">
           <div className="introducing">
             <div className="app-info">
-              <h2 className="welcome">Bienvenue sur Vazo</h2>
+              <h2 className="welcome">
+                Personnalisez vos vidéos lyrics avec <span className="vazo-span">Vazo</span>
+              </h2>
               <p className="about-app">Une plateforme où vous pouvez convertir vos audios en vidéos lyrics captivantes et écouter vos musiques.</p>
             </div>
             <ImageSlider />
           </div>
 
+          <NavLink to="/accueil">
             <button className="commencer-button">Commencer</button>
+          </NavLink>
         </div>
       </div>
     </>

@@ -11,7 +11,10 @@ export function PageAccueil() {
       {/* Sidebar de l'accueil */}
       <div className="sidebar-accueil">
         <div className="menu-sidebar">
-          <div className="menu">Menu</div>
+          <div className="profile-container">
+            <img className="profile-image" src="/images/antsa.jpg" alt="Profil de l'utilisateur" />
+            <p className="profile-name"></p>
+          </div>
           <div className="composant-menu">
             <div className="composant">
               <img className="logo-composant" src="/images/accueil.png" alt="Image d'accueil" />
