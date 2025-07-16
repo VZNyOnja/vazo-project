@@ -42,7 +42,7 @@ export function MontagePage() {
           <img className="video" src="/images/video-lyrics.png"></img>
           
           <div className="audio-controls">
-            <img className="control-icon" src="/images/stop.png" alt="icône" />
+            {/* <img className="control-icon" src="/images/stop.png" alt="icône" /> */}
             {/* <img className="control-icon" src="/images/retour.png" alt="icône" /> */}
             <img className="control-icon" src="/images/previous.png" alt="icône" />
             {/* <img className="control-icon play" src="/images/play.png" alt="icône" /> */}

@@ -62,10 +62,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 400px;
+  width: 200px;
   height: 40px;
-  padding: 4px 128px;
-  margin-bottom: 32px;
+  padding: 4px 64px;
+  margin-bottom: 24px;
   background-color: #EFEFEF;
 }
 

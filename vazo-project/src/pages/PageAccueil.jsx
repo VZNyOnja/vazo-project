@@ -1,4 +1,5 @@
 import { AccueilHeader } from "../components/AccueilHeader";
+import { SidebarAccueil } from "../components/SidebarAccueil";
 import './PageAccueil.css';
 
 export function PageAccueil() {
@@ -9,30 +10,7 @@ export function PageAccueil() {
       <AccueilHeader />
 
       {/* Sidebar de l'accueil */}
-      <div className="sidebar-accueil">
-        <div className="menu-sidebar">
-          <div className="profile-container">
-            <img className="profile-image" src="/images/antsa.jpg" alt="Profil de l'utilisateur" />
-            <p className="profile-name"></p>
-          </div>
-          <div className="composant-menu">
-            <div className="composant">
-              <img className="logo-composant" src="/images/accueil.png" alt="Image d'accueil" />
-              <p className="nom-composant">Accueil</p>
-            </div>
-            
-            <div className="composant">
-              <img className="logo-composant" src="/images/projet.png" alt="Image d'un dossier" />
-              <p className="nom-composant">Projet</p>
-            </div>
-
-            <div className="composant">
-              <img className="logo-composant" src="/images/son-onde.png" alt="Image d'un son d'onde" />
-              <p className="nom-composant">My Musics</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <SidebarAccueil />
 
       {/* Contenu de l'accueil */}
       <div className="accueil-container">

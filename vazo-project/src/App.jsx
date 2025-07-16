@@ -4,6 +4,7 @@ import { Homepage } from './pages/Homepage';
 import { TeleverserPage } from './pages/TeleverserPage';
 import { MontagePage } from './pages/MontagePage';
 import { PageAccueil } from './pages/PageAccueil';
+import { MyMusics } from './pages/MyMusics';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route path="televerser-page" element={<TeleverserPage />} />
       <Route path="montage-page" element={<MontagePage />} />
       <Route path="accueil" element={<PageAccueil />} />
+      <Route path="my-musics" element={<MyMusics />} />
     </Routes>
   )
 }

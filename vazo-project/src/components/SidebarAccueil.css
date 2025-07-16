@@ -1,0 +1,22 @@
+/* CSS du sidebar de l'accueil */
+.sidebar-accueil {
+  display: flex;
+  width: 200px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  padding-top: 32px;
+  box-shadow: 1px 0 1px rgba(0, 0, 0, 0.2);
+
+
+  z-index: 100;
+}
+
+.menu-sidebar {
+  display: flex;
+  flex-direction: column;
+  padding-left: 8px;
+}
