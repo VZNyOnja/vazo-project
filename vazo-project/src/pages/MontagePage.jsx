@@ -1,15 +1,21 @@
 import { MainHeader } from '../components/MainHeader';
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import { ColorPicker, useColor } from "react-color-palette";
+import "react-color-palette/css";
 import './MontagePage.css';
 
 export function MontagePage() {
-
   const audioRef = useRef(null);
   const [searchParams] = useSearchParams();
   const [words, setWords] = useState([]);
   const [currentTime, setCurrentTime] = useState(0);
   const [audioSrc, setAudioSrc] = useState(null);
+  const [color, setColor] = useColor("#561ecb");
+  const [showColorPicker, setShowColorPicker] = useState(false);
+  const [bgIndex, setBgIndex] = useState(0);
+  const [showInput, setShowInput] = useState(false);
+  const [text, setText] = useState("Ecrire ici");
 
   // Récupération du nom du fichier uploadé dans l'URL
   const filename = searchParams.get("file");
@@ -59,6 +65,33 @@ export function MontagePage() {
     }
   };
 
+  // Modifier police
+  const toggleInput = () => {
+    setShowInput((prev) => !prev);
+  };
+
+  // Couleur qui permet de changer de couleur
+  const changerCouleur = () => {
+    setShowColorPicker(!showColorPicker);
+  }
+
+  // Arriere plan qui permet de changer le background
+  const bgArray = [
+    './images/bg/background1.jpg',
+    './images/bg/background2.jpg',
+    './images/bg/background3.jpg',
+    './images/bg/background4.jpg',
+    './images/bg/background5.jpg'
+  ];
+
+  const handleChangeBackground = () => {
+    if (bgIndex >= bgArray.length - 1) {
+      setBgIndex(0);
+    } else {
+      setBgIndex(bgIndex + 1);
+    }
+  }
+
   return (
     <>
       <title>Montage</title>
@@ -67,17 +100,22 @@ export function MontagePage() {
 
       {/* Sidebar d'où il y a les modifications pour le montage */}
       <div className="sidebar">
-        <div className="edit">
+        <div onClick={toggleInput} className="edit">
           <img className="edit-icon" src="/images/police.png" alt="icône de police" />
           <div className="edit-name">Police</div>
         </div>
 
-        <div className="edit">
+        <div onClick={changerCouleur} className="edit">
           <img className="edit-icon" src="/images/couleur.png" alt="icône de couleur" />
           <div className="edit-name">Couleur</div>
         </div>
+        <div className="test-paragraph">
+          <p style={{ color: color.hex, fontSize: "24px", marginTop: "20px" }}>
+            {/* Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, assumenda! Repudiandae possimus provident sequi. Ea suscipit obcaecati enim aperiam facilis, velit labore! Ipsum dolor blanditiis qui. Facere illo optio commodi? */}
+          </p>
+        </div>
 
-        <div className="edit">
+        <div onClick={handleChangeBackground} className="edit">
           <img className="edit-icon" src="/images/arriere-plan.png" alt="icône d'arrière-plan" />
           <div className="edit-name">Arrière-plan</div>
         </div>
@@ -93,10 +131,28 @@ export function MontagePage() {
         </div>
       </div>
 
+      {showInput && (
+        <input
+          className="pencil"
+          type="text"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          style={{ marginLeft: "10px" }}
+        />
+      )}
+
+      {showColorPicker && (
+        <div className="modificateur-couleur">
+          <ColorPicker color={color} onChange={setColor} />
+        </div>
+      )}
+
       {/* La section du montage */}
       <div className="montage-body">
         <div className="montage-container">
-          {/* <img className="video" src="/images/video-lyrics.png"></img>*/}
+          <img className="video" src={bgArray[bgIndex]}
+
+          />
           {/* Player audio dynamique */}
           {audioSrc && (
             <audio

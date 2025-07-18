@@ -19,7 +19,7 @@
   box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
 }
 .lyrics-display {
-  margin-top: 20px;
+  margin-top: 20vh;
   text-align: center;
   font-size: 1.5rem;
   color: #ccc;
@@ -49,12 +49,30 @@
   font-size: 12px;
 }
 
+.pencil {
+  position: fixed;
+  top: 31vh;
+  left: 40vw;
+  font-size: 24px;
+  width: 256px;
+}
+
+.modificateur-couleur {
+  /* margin-left: 23vh; */
+  width: 424px;
+  position: fixed;
+  left: 104px;
+  top: 192px;
+  z-index: 90;
+}
+
 /* CSS du montage */
 .montage-body {
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 40px;
+  z-index: 10;
 }
 
 .montage-container {
@@ -65,8 +83,15 @@
 }
 
 .video {
-  width: 800px;
+  width: 39vw;
+  height: 56vh;
   margin-bottom: 24px;
+}
+
+.test-paragraph {
+  position: fixed;
+  bottom: 16px;
+  left: 256px;
 }
 
 /* CSS de l'audio controls */
@@ -79,6 +104,9 @@
   padding: 4px 64px;
   margin-bottom: 24px;
   background-color: #EFEFEF;
+
+  position: fixed;
+  bottom: 13vh;
 }
 
 .control-icon {
@@ -99,7 +127,8 @@
   height: 72px;
   background-color: #EFEFEF;
 
-  position: relative;
+  position: fixed;
+  bottom: 4vh;
 }
 
 .play-mark {
