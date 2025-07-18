@@ -5,7 +5,7 @@ import './HeaderTeleverser.css';
 export function HeaderTeleverser() {
   return (
     // Header de la page televerser page
-    <div className="header-accueil">
+    <div className="header-televerser">
       <div className="left-section">
         <NavLink to="/" className="header-link">
           <img className="logo-vazo" src={LogoVazo} alt="C'est le logo de l'application Vazo" />

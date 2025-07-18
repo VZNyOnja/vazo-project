@@ -17,34 +17,39 @@ export function MontagePage() {
   // Charger l'audio et la transcription associée
   useEffect(() => {
     if (!filename) return;
-    setWords([]);
-    setCurrentTime(0);
-
     // Chemin vers le fichier audio côté backend
     setAudioSrc(`http://localhost:5000/uploads/${filename}`);
 
     // Appel API pour récupérer la transcription Whisper
-    async function fetchTranscription() {
-      try {
-        const res = await fetch(
-          `http://localhost:5000/api/transcription?file=${encodeURIComponent(
-            filename
-          )}`
-        );
-        const data = await res.json();
+    // async function fetchTranscription() {
+    //   try {
+    //     const res = await fetch(
+    //       `http://localhost:5000/api/transcription?file=${encodeURIComponent(
+    //         filename
+    //       )}`
+    //     );
+    //     const data = await res.json();
 
-        if (data.words) {
-          setWords(data.words); // [{text, start, end}]
-        } else {
-          console.warn("Pas de paroles détectées.");
-          setWords([]);
-        }
+    //     if (data.words) {
+    //       setWords(data.words); // [{text, start, end}]
+    //     } else {
+    //       console.warn("Pas de paroles détectées.");
+    //       setWords([]);
+    //     }
+    //   } catch (err) {
+    //     console.error("Erreur transcription:", err);
+    //   }
+    // }
+    // fetchTranscription();
+    // Récupérer la transcription stockée dans localStorage par TeleverserPage
+    const storedWords = localStorage.getItem("transcription");
+    if (storedWords) {
+      try {
+        setWords(JSON.parse(storedWords));
       } catch (err) {
-        console.error("Erreur transcription:", err);
+        console.error("Erreur de parsing des paroles :", err);
       }
     }
-
-    fetchTranscription();
   }, [filename]);
 
   // Mettre à jour le temps courant pour surligner les paroles
