@@ -27,9 +27,10 @@ export function TeleverserPage() {
       const response = await fetch("http://localhost:5000/transcribe", {
         method: "POST",
         body: formData
-      });
+      }); 
       const data = await response.json();
       if (data.success) {
+        localStorage.setItem('transcription', JSON.stringify(data.words));
         // Redirection vers MontagePage avec le nom du fichier dans l'URL
         navigate(`/montage?file=${encodeURIComponent(data.filename)}`);
       } else {

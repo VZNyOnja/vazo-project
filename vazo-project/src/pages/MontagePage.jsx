@@ -17,6 +17,8 @@ export function MontagePage() {
   // Charger l'audio et la transcription associée
   useEffect(() => {
     if (!filename) return;
+    setWords([]);
+    setCurrentTime(0);
 
     // Chemin vers le fichier audio côté backend
     setAudioSrc(`http://localhost:5000/uploads/${filename}`);
@@ -33,6 +35,9 @@ export function MontagePage() {
 
         if (data.words) {
           setWords(data.words); // [{text, start, end}]
+        } else {
+          console.warn("Pas de paroles détectées.");
+          setWords([]);
         }
       } catch (err) {
         console.error("Erreur transcription:", err);
@@ -44,7 +49,7 @@ export function MontagePage() {
 
   // Mettre à jour le temps courant pour surligner les paroles
   const handleTimeUpdate = () => {
-    if (audioRef.current) {
+    if (audioRef.current?.currentTime != null) {
       setCurrentTime(audioRef.current.currentTime);
     }
   };
@@ -54,7 +59,7 @@ export function MontagePage() {
       <title>Montage</title>
 
       <MainHeader />
-      
+
       {/* Sidebar d'où il y a les modifications pour le montage */}
       <div className="sidebar">
         <div className="edit">
@@ -87,7 +92,7 @@ export function MontagePage() {
       <div className="montage-body">
         <div className="montage-container">
           {/* <img className="video" src="/images/video-lyrics.png"></img>*/}
-           {/* Player audio dynamique */}
+          {/* Player audio dynamique */}
           {audioSrc && (
             <audio
               ref={audioRef}
@@ -97,7 +102,7 @@ export function MontagePage() {
             />
           )}
 
-           {/* Paroles synchronisées */}
+          {/* Paroles synchronisées */}
           <div className="lyrics-display">
             {words.length > 0 ? (
               words.map((word, index) => {
@@ -129,7 +134,7 @@ export function MontagePage() {
             <img className="control-icon" src="/images/next.png" alt="icône" />
             {/* <img className="control-icon" src="/images/continuer.png" alt="icône" /> */}
           </div>
-          
+
           <div className="timeline">
             <div className="play-mark">
               <img className="playzone" src="/images/playzone.png" alt="" />
