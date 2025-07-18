@@ -1,6 +1,7 @@
 /* CSS du sidebar de l'accueil */
 .sidebar-accueil {
   display: flex;
+  flex-direction: column;
   width: 200px;
 
   position: fixed;
@@ -14,9 +15,7 @@
 
   z-index: 100;
 }
-
+/* 
 .menu-sidebar {
-  display: flex;
-  flex-direction: column;
   padding-left: 8px;
-}
+} */
