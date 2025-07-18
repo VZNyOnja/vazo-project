@@ -18,6 +18,18 @@
   z-index: 90;
   box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
 }
+.lyrics-display {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ccc;
+  line-height: 2rem;
+}
+
+.highlight {
+  color: #ff4081;
+  font-weight: bold;
+}
 
 .edit {
   display: flex;

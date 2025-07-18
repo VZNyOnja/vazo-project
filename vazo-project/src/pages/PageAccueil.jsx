@@ -1,5 +1,6 @@
 import { AccueilHeader } from "../components/AccueilHeader";
 import { SidebarAccueil } from "../components/SidebarAccueil";
+import { NavLink } from "react-router";
 import './PageAccueil.css';
 
 export function PageAccueil() {
@@ -14,9 +15,9 @@ export function PageAccueil() {
 
       {/* Contenu de l'accueil */}
       <div className="accueil-container">
-        <div className="importer-fichier">
+        <NavLink to="/televerser-page" className="importer-fichier">
           <button className="importer-fichier-button">Importer un fichier</button>
-        </div>
+        </NavLink>
 
         <div className="view-accueil">
           <div className="welcoming">

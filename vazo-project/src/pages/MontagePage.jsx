@@ -1,7 +1,54 @@
 import { MainHeader } from '../components/MainHeader';
 import './MontagePage.css';
+import { useSearchParams } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 
 export function MontagePage() {
+
+  const audioRef = useRef(null);
+  const [searchParams] = useSearchParams();
+  const [words, setWords] = useState([]);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [audioSrc, setAudioSrc] = useState(null);
+
+  // Récupération du nom du fichier uploadé dans l'URL
+  const filename = searchParams.get("file");
+
+  // Charger l'audio et la transcription associée
+  useEffect(() => {
+    if (!filename) return;
+
+    // Chemin vers le fichier audio côté backend
+    setAudioSrc(`http://localhost:5000/uploads/${filename}`);
+
+    // Appel API pour récupérer la transcription Whisper
+    async function fetchTranscription() {
+      try {
+        const res = await fetch(
+          `http://localhost:5000/api/transcription?file=${encodeURIComponent(
+            filename
+          )}`
+        );
+        const data = await res.json();
+
+        if (data.words) {
+          setWords(data.words); // [{text, start, end}]
+        }
+      } catch (err) {
+        console.error("Erreur transcription:", err);
+      }
+    }
+
+    fetchTranscription();
+  }, [filename]);
+
+  // Mettre à jour le temps courant pour surligner les paroles
+  const handleTimeUpdate = () => {
+    if (audioRef.current) {
+      setCurrentTime(audioRef.current.currentTime);
+    }
+  };
+
   return (
     <>
       <title>Montage</title>
@@ -39,8 +86,40 @@ export function MontagePage() {
       {/* La section du montage */}
       <div className="montage-body">
         <div className="montage-container">
-          <img className="video" src="/images/video-lyrics.png"></img>
-          
+          {/* <img className="video" src="/images/video-lyrics.png"></img>*/}
+           {/* Player audio dynamique */}
+          {audioSrc && (
+            <audio
+              ref={audioRef}
+              src={audioSrc}
+              controls
+              onTimeUpdate={handleTimeUpdate}
+            />
+          )}
+
+           {/* Paroles synchronisées */}
+          <div className="lyrics-display">
+            {words.length > 0 ? (
+              words.map((word, index) => {
+                const isActive =
+                  currentTime >= word.start && currentTime < word.end;
+                return (
+                  <span
+                    key={index}
+                    className={isActive ? "highlight" : ""}
+                    style={{
+                      marginRight: "6px",
+                      transition: "color 0.3s ease",
+                    }}
+                  >
+                    {word.text}
+                  </span>
+                );
+              })
+            ) : (
+              <p>Chargement des paroles...</p>
+            )}
+          </div>
           <div className="audio-controls">
             {/* <img className="control-icon" src="/images/stop.png" alt="icône" /> */}
             {/* <img className="control-icon" src="/images/retour.png" alt="icône" /> */}

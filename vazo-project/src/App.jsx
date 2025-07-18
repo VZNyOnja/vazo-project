@@ -8,14 +8,16 @@ import { MyMusics } from './pages/MyMusics';
 
 function App() {
   return (
-    <Routes>
-      <Route index element={<Homepage />} />
-      <Route path="homepage" element={<Homepage />} />
-      <Route path="televerser-page" element={<TeleverserPage />} />
-      <Route path="montage-page" element={<MontagePage />} />
-      <Route path="accueil" element={<PageAccueil />} />
-      <Route path="my-musics" element={<MyMusics />} />
-    </Routes>
+    // <BrowserRouter>
+      <Routes>
+        <Route index element={<Homepage />} />
+        <Route path="homepage" element={<Homepage />} />
+        <Route path="televerser-page" element={<TeleverserPage />} />
+        <Route path="montage-page" element={<MontagePage />} />
+        <Route path="accueil" element={<PageAccueil />} />
+        <Route path="my-musics" element={<MyMusics />} />
+      </Routes>
+    // </BrowserRouter>
   )
 }
 

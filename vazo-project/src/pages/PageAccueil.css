@@ -64,6 +64,7 @@
   justify-content: flex-end;
   width: 74%;
   margin-top: 16px;
+  text-decoration: none;
 }
 
 .importer-fichier-button {

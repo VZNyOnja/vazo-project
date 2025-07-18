@@ -1,20 +1,22 @@
-import { MainHeader } from '../components/MainHeader';
-import './TeleverserPage.css';
 import { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { HeaderTeleverser } from '../components/HeaderTeleverser';
+import './TeleverserPage.css';
 
 
 // La page téléverser
 export function TeleverserPage() {
   const fileInputRef = useRef(null);
   const [isUploading, setIsUploading] = useState(false);
-  const [transcription, setTranscription] = useState(null);
+  // const [transcription, setTranscription] = useState(null);
+  const navigate = useNavigate();
 
   const handleChooseFileClick = () => {
     fileInputRef.current.click();
   };
   const handleFileChange = async (event) => {
     const file = event.target.files[0];
-    if (!file) return;
+    if (!file) return console.log("tu peux pleurer");
 
     const formData = new FormData();
     formData.append("audio_file", file);
@@ -26,9 +28,16 @@ export function TeleverserPage() {
         method: "POST",
         body: formData
       });
-
       const data = await response.json();
-      setTranscription(data.words); // liste [{text, start, end}]
+      if (data.success) {
+        // Redirection vers MontagePage avec le nom du fichier dans l'URL
+        navigate(`/montage?file=${encodeURIComponent(data.filename)}`);
+      } else {
+        console.error("Erreur de transcription :", data.error);
+      }
+
+      // const data = await response.json();
+      // setTranscription(data.words); // liste [{text, start, end}]
     } catch (error) {
       console.error("Erreur d'upload :", error);
     } finally {
@@ -36,16 +45,14 @@ export function TeleverserPage() {
     }
   };
 
-
   return (
     <>
       <title>Téléverser Page</title>
 
-      <MainHeader />
+      <HeaderTeleverser />
 
       <div className="main-televerser-page">
         <div className="televerser-audio-container">
-          <img className="fermer-icone" src="/images/fermer.png" alt="bouton fermer" />
           <div className="televerser-audio">
             <img className="televerser-icone" src="/images/televerser-fichier.png" alt="icône téléverser" />
             <div className="televerser-un-audio">Téléverser un audio</div>
@@ -61,13 +68,13 @@ export function TeleverserPage() {
             />
             {isUploading && <div className="uploading-message">Transcription en cours...</div>}
 
-            {transcription && (
+            {/* {transcription && (
               <div className="transcription">
                 {transcription.map((word, index) => (
                   <span key={index}>{word.text} </span>
                 ))}
               </div>
-            )}
+            )} */}
           </div>
         </div>
       </div>

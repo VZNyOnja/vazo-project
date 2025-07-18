@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import whisperx
 import os
 
+
 app = Flask(__name__)
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -23,6 +24,15 @@ def transcribe():
     aligned = whisperx.align(result["segments"], align_model, metadata, path, device="cpu")
 
     return jsonify({
-        "words": aligned["word_segments"],  # mot par mot
-        "audioUrl": f"http://localhost:5000/static/audio/{audio.filename}"
+        
+        #"words": aligned["word_segments"],  # mot par mot
+        #"filename": audio.filename,
+        #"audioUrl": f"http://localhost:5000/static/audio/{audio.filename}"
+        
+        "success": True,
+        "filename": audio.filename,   # <-- indispensable pour la redirection
+        "words": aligned["word_segments"]
     })
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=5000)
