@@ -1,45 +1,45 @@
-from flask import Flask, request, jsonify,send_from_directory
-import whisperx
 import os
+from flask import Flask, request, jsonify
+import whisper
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
+CORS(app)  # Permet les requêtes entre ton frontend React et ton backend Flask
+
 UPLOAD_FOLDER = "uploads"
-app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
+AUDIO_OUTPUT = "static/audio"
+
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+os.makedirs(AUDIO_OUTPUT, exist_ok=True)
 
-@app.route("/transcribe", methods=["POST"])
-def transcribe():
-    if "audio_file" not in request.files:
-        return jsonify({"error": "No file sent"}), 400
+model = whisper.load_model("small", device="cpu")
 
-    audio = request.files["audio_file"]
-    path = os.path.join(UPLOAD_FOLDER, audio.filename)
-    audio.save(path)
+@app.route("/api/transcribe", methods=["POST"])
+def transcribe_audio():
+    if "audio" not in request.files:
+        return jsonify({"error": "Aucun fichier audio fourni."}), 400
 
-    # whisperX
-    model = whisperx.load_model("medium", device="cpu")
-    result = model.transcribe(path)
+    audio_file = request.files["audio"]
+    filepath = os.path.join(UPLOAD_FOLDER, audio_file.filename)
+    audio_file.save(filepath)
 
-    align_model, metadata = whisperx.load_align_model(result["language"], device="cpu")
-    aligned = whisperx.align(result["segments"], align_model, metadata, path, device="cpu")
+    # Transcription avec Whisper simple
+    result = model.transcribe(filepath)
+    text = result["text"]
+    
+    # Traitement basique ligne par ligne
+    lyrics = text.strip().split(",")
+    lyrics = [line.strip() for line in lyrics if line.strip()]
+
+    # Copie du fichier dans static/audio (si tu veux le rejouer depuis le frontend)
+    output_audio_path = os.path.join(AUDIO_OUTPUT, audio_file.filename)
+    with open(filepath, "rb") as src, open(output_audio_path, "wb") as dst:
+        dst.write(src.read())
 
     return jsonify({
-        
-        #"words": aligned["word_segments"],  # mot par mot
-        #"filename": audio.filename,
-        #"audioUrl": f"http://localhost:5000/static/audio/{audio.filename}"
-        
-        "success": True,
-        "filename": audio.filename,   # <-- indispensable pour la redirection
-        "words": aligned["word_segments"]
+        "lyrics": lyrics,
+        "audioUrl": f"/static/audio/{audio_file.filename}"
     })
 
-# Optional: to access audio file in frontend
-@app.route("/uploads/<filename>")
-def uploaded_file(filename):
-    return send_from_directory(app.config["UPLOAD_FOLDER"], filename)
-
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    app.run(debug=True)
