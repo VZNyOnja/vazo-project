@@ -1,7 +1,7 @@
 import { MainHeader } from '../components/MainHeader';
-import './MontagePage.css';
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import './MontagePage.css';
 
 export function MontagePage() {
 
