@@ -64,11 +64,18 @@
   font-weight: 600;
   font-size: 16px;
   color: white;
-  background-color: #8187DC;
+  background-color: #8187dc;
   padding: 12px 48px;
   border: none;
   border-radius: 24px;
   margin-top: 64px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.commencer-button:hover {
+  background-color: #adb1e2;
+  box-shadow: 0 0 12px rgba(129, 135, 220, 0.7);
   cursor: pointer;
 }
 

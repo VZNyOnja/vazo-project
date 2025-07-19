@@ -1,7 +1,10 @@
-import './SidebarAccueil.css';
 import { NavLink } from 'react-router';
+import { useState } from 'react';
+import './SidebarAccueil.css';
 
 export function SidebarAccueil() {
+  const [activeButton, setActiveButton] = useState(null);
+
   const menuItems = [{
     path: "/accueil",
     icon: "/images/accueil.png",
@@ -24,17 +27,32 @@ export function SidebarAccueil() {
     alt: "Icône d'un montage"
   }];
 
+  const handleButtonClick = (buttonName) => {
+    if (activeButton === buttonName) {
+      setActiveButton(null);
+    } else {
+      setActiveButton(buttonName);
+    }
+  }
   return (
     <div className="sidebar-accueil">
       {/* <div className="menu-sidebar"> */}
         <div className="profile-container">
-          <img className="profile-image" src="/images/steeven.jpg" alt="Profil de l'utilisateur" />
-          <p className="profile-name">Steeven Zengu</p>
+          <img className="profile-image" src="/images/avatar.jpg" alt="Profil de l'utilisateur" />
+          <p className="profile-name">Antsa Patricia RAK</p>
         </div>
         <div className="composant-menu">
           {menuItems.map((item, index) => {
             return (
-              <NavLink to={item.path} key={index} className="composant">
+              <NavLink
+                onClick={() => {
+                    handleButtonClick(item.iconName);
+                  }
+                }
+                to={item.path}
+                key={index}
+                className={`composant ${activeButton === item.iconName ? "active" : ""}`}
+              >
                 <img className="logo-composant" src={item.icon} alt={item.alt} />
                 <p className="nom-composant">{item.iconName}</p>
               </NavLink>

@@ -33,6 +33,18 @@
   margin-right: 8px;
   border-radius: 8px;
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.liste-cover .cover:hover {
+  width: 136px;
+  height: 136px;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 
 @media (min-width: 1092.1px) and (max-width: 1535.9px) {

@@ -34,9 +34,24 @@
 .edit {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
-  margin-bottom: 24px;
+  height: 68px;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.edit:hover {
+  background-color: rgb(245, 240, 240);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* L'active button */
+.edit.active {
+  background-color: #ddd;
+  border-radius: 8px;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
 }
 
 .edit-icon {
@@ -71,7 +86,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 40px;
+  /* padding-top: 40px; */
   z-index: 10;
 }
 

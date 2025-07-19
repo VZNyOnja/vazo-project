@@ -68,6 +68,13 @@
   color: white;
   background-color: #8187DC;
   cursor: pointer;
+  transition: all 0.5s;
+}
+
+.headerHomepage .connexion-button:hover {
+  background-color: #adb1e2;
+  box-shadow: 0 0 12px rgba(129, 135, 220, 0.7);
+  cursor: pointer;
 }
 
 .headerHomepage .sign-in {

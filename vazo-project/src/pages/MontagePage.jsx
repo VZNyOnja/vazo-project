@@ -14,8 +14,11 @@ export function MontagePage() {
   const [color, setColor] = useColor("#561ecb");
   const [showColorPicker, setShowColorPicker] = useState(false);
   const [bgIndex, setBgIndex] = useState(0);
-  const [showInput, setShowInput] = useState(false);
+  // const [showInput, setShowInput] = useState(false);
   const [text, setText] = useState("Ecrire ici");
+  const [activeButton, setActiveButton] = useState(null);
+  const [activeTool, setActiveTool] = useState(null);
+
 
   // Récupération du nom du fichier uploadé dans l'URL
   const filename = searchParams.get("file");
@@ -66,9 +69,9 @@ export function MontagePage() {
   };
 
   // Modifier police
-  const toggleInput = () => {
-    setShowInput((prev) => !prev);
-  };
+  // const toggleInput = () => {
+  //   setShowInput((prev) => !prev);
+  // };
 
   // Couleur qui permet de changer de couleur
   const changerCouleur = () => {
@@ -92,6 +95,24 @@ export function MontagePage() {
     }
   }
 
+  // Bouton actif
+  const handleButtonClick = (buttonName) => {
+    if (activeButton === buttonName) {
+      setActiveButton(null);
+    } else {
+      setActiveButton(buttonName);
+    }
+  };
+
+  // Actif unique
+  const handleToolClick = (toolName) => {
+    if (activeTool === toolName) {
+      setActiveTool(null);
+    } else {
+      setActiveTool(toolName);
+    }
+  }
+
   return (
     <>
       <title>Montage</title>
@@ -100,12 +121,28 @@ export function MontagePage() {
 
       {/* Sidebar d'où il y a les modifications pour le montage */}
       <div className="sidebar">
-        <div onClick={toggleInput} className="edit">
+        <div
+          onClick={() => {
+              // toggleInput();
+              handleToolClick("police");
+              handleButtonClick("police");
+            }
+          } 
+          className={`edit ${activeButton === "police" ? "active" : ""}`}
+          >
           <img className="edit-icon" src="/images/police.png" alt="icône de police" />
           <div className="edit-name">Police</div>
         </div>
 
-        <div onClick={changerCouleur} className="edit">
+        <div
+          onClick={() => {
+            changerCouleur();
+            handleToolClick("couleur");
+            handleButtonClick("couleur");
+          }
+        }
+          className={`edit ${activeButton === "couleur" ? "active" : ""}`}
+        >
           <img className="edit-icon" src="/images/couleur.png" alt="icône de couleur" />
           <div className="edit-name">Couleur</div>
         </div>
@@ -131,7 +168,17 @@ export function MontagePage() {
         </div>
       </div>
 
-      {showInput && (
+      {/* {showInput && (
+        <input
+          className="pencil"
+          type="text"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          style={{ marginLeft: "10px" }}
+        />
+      )} */}
+
+      {activeTool === "police" && (
         <input
           className="pencil"
           type="text"
@@ -141,7 +188,13 @@ export function MontagePage() {
         />
       )}
 
-      {showColorPicker && (
+      {/* {showColorPicker && (
+        <div className="modificateur-couleur">
+          <ColorPicker color={color} onChange={setColor} />
+        </div>
+      )} */}
+
+      {activeTool === "couleur" && (
         <div className="modificateur-couleur">
           <ColorPicker color={color} onChange={setColor} />
         </div>

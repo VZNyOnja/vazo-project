@@ -27,15 +27,8 @@ export function PageAccueil() {
 
           <div className="videos-accueil">
             <div className="example">
-              <img className="video1" src="/images/video1.png" alt="Video 1" />
-              <img className="video2" src="/images/video-telephone.png" alt="Video 2" />
-              <img className="video3" src="/images/video2.png" alt="Video 3" />
-            </div>
-
-            <div className="example">
-              <img className="video1" src="/images/video1.png" alt="Video 1" />
-              <img className="video2" src="/images/video-telephone.png" alt="Video 2" />
-              <img className="video3" src="/images/video2.png" alt="Video 3" />
+              <video controls className="video1" src="/video/hira1.mp4" alt="Video 1" />
+              <video controls className="video2" src="/video/hira2.mp4" alt="Video 2" />
             </div>
           </div>
         </div>

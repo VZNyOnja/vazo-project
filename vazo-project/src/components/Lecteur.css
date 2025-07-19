@@ -43,6 +43,31 @@
   margin-bottom: 8px;
 }
 
+/* Marquee pour défiler les titres et noms d'artiste trop long */
+.marquee-container {
+  width: 127px;        /* largeur fixe */
+  overflow: hidden;    /* cache ce qui dépasse */
+  white-space: nowrap; /* empêche le retour à la ligne */
+  position: relative;
+}
+
+.marquee-container .music-title,
+.marquee-container .singer {
+  display: inline-block;
+  padding-left: 100%;   /* commence à droite */
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
 .music-title {
   font-size: 18px;
   font-weight: 600;
@@ -157,6 +182,11 @@
   .music-player {
     font-size: 8px;
   }
+
+  /* Marquee */
+  .marquee-container {
+    width: 125px;
+  }
   
   .music-title {
     font-size: 14px;
@@ -242,6 +272,11 @@
   
   .music-player {
     font-size: 8px;
+  }
+
+  /* Marquee */
+  .marquee-container {
+    width: 109px;
   }
   
   .music-title {
