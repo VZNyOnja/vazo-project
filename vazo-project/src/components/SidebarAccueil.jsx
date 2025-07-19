@@ -17,6 +17,11 @@ export function SidebarAccueil() {
     icon: "/images/son-onde.png",
     iconName: "My Musics",
     alt: "Icône d'un son d'onde"
+  }, {
+    path: "/montage-page",
+    icon: "/images/editing.png",
+    iconName: "Montage",
+    alt: "Icône d'un montage"
   }];
 
   return (

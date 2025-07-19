@@ -55,7 +55,7 @@ export function Lecteur() {
           <div className="music-title">IZY</div>
           <div className="singer">Henika</div>
         </div>
-        <img src="/audio/antsa.jpg" alt="Song's image" className="music-image" />
+        <img src="/images/default-cover.jpg" alt="Song's image" className="music-image" />
       </div>
 
       <div className="music-player-controller">

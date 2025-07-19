@@ -9,7 +9,7 @@ export function Playlist() {
           <div className="music">
             <div className="info-music">
               <img src="/images/play-playlist.png" alt="Bouton play ou pause" className="play-button pause-button" />
-              <img src="/audio/antsa.jpg" alt="" className="cover-music" />
+              <img src="/images/default-cover.jpg" alt="" className="cover-music" />
               <div className="the-music">
                 <div className="title-music">IZY</div>
                 <div className="singer-music">Henika</div>
@@ -23,7 +23,7 @@ export function Playlist() {
           <div className="music">
             <div className="info-music">
               <img src="/images/play-playlist.png" alt="Bouton play ou pause" className="play-button pause-button" />
-              <img src="/audio/antsa.jpg" alt="" className="cover-music" />
+              <img src="/images/default-cover.jpg" alt="" className="cover-music" />
               <div className="the-music">
                 <div className="title-music">IZY</div>
                 <div className="singer-music">Henika</div>
@@ -37,7 +37,7 @@ export function Playlist() {
           <div className="music">
             <div className="info-music">
               <img src="/images/play-playlist.png" alt="Bouton play ou pause" className="play-button pause-button" />
-              <img src="/audio/antsa.jpg" alt="" className="cover-music" />
+              <img src="/images/default-cover.jpg" alt="" className="cover-music" />
               <div className="the-music">
                 <div className="title-music">IZY</div>
                 <div className="singer-music">Henika</div>
@@ -51,7 +51,7 @@ export function Playlist() {
           <div className="music">
             <div className="info-music">
               <img src="/images/play-playlist.png" alt="Bouton play ou pause" className="play-button pause-button" />
-              <img src="/audio/antsa.jpg" alt="" className="cover-music" />
+              <img src="/images/default-cover.jpg" alt="" className="cover-music" />
               <div className="the-music">
                 <div className="title-music">IZY</div>
                 <div className="singer-music">Henika</div>
@@ -65,7 +65,7 @@ export function Playlist() {
           <div className="music">
             <div className="info-music">
               <img src="/images/play-playlist.png" alt="Bouton play ou pause" className="play-button pause-button" />
-              <img src="/audio/antsa.jpg" alt="" className="cover-music" />
+              <img src="/images/default-cover.jpg" alt="" className="cover-music" />
               <div className="the-music">
                 <div className="title-music">IZY</div>
                 <div className="singer-music">Henika</div>
@@ -79,7 +79,7 @@ export function Playlist() {
           <div className="music">
             <div className="info-music">
               <img src="/images/play-playlist.png" alt="Bouton play ou pause" className="play-button pause-button" />
-              <img src="/audio/antsa.jpg" alt="" className="cover-music" />
+              <img src="/images/default-cover.jpg" alt="" className="cover-music" />
               <div className="the-music">
                 <div className="title-music">IZY</div>
                 <div className="singer-music">Henika</div>
