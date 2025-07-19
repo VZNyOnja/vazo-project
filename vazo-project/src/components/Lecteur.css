@@ -134,3 +134,184 @@
 .controls .pause {
   cursor: pointer;
 }
+
+@media (min-width: 1297px) and (max-width: 1535px) {
+  .music-player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Raleway", sans-serif;
+    width: 232px;
+    height: 330px;
+    border-radius: 24px;
+    background-color: #c084fc;
+    box-shadow: 0 0 16px 8px rgba(221, 159, 233, 0.5);
+    color: white;
+  
+    position: fixed;
+    bottom: 3.1vh;
+    right: 1.04vw;
+    transition: box-shadow 0.3s;
+  }
+  
+  .music-player {
+    font-size: 8px;
+  }
+  
+  .music-title {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .singer {
+    font-size: 10px;
+    font-weight: 400;
+  }
+  .music-image {
+    height: 120px;
+    width: 120px;
+    border-radius: 60px;
+    object-fit: cover;
+    animation: animateIMG 0.5s linear infinite;
+    cursor: pointer;
+  }
+  
+  .duration-music {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 200px;
+  }
+  
+  .music-bar {
+    width: 75%;
+    margin-top: 8px;
+    outline: none;
+    filter: hue-rotate(80deg);
+    cursor: pointer;
+  }
+
+  .controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    width: 92px;
+    height: 40px;
+  }
+  
+  .controls .previous,
+  .controls .next {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .controls .play,
+  .controls .pause {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .controls .previous,
+  .controls .next,
+  .controls .play,
+  .controls .pause {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 1296px) {
+  .music-player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Raleway", sans-serif;
+    width: 200px;
+    height: 296px;
+    border-radius: 24px;
+    background-color: #c084fc;
+    box-shadow: 0 0 16px 8px rgba(221, 159, 233, 0.5);
+    color: white;
+  
+    position: fixed;
+    bottom: 3.1vh;
+    right: 1.04vw;
+    transition: box-shadow 0.3s;
+  }
+  
+  .music-player {
+    font-size: 8px;
+  }
+  
+  .music-title {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .singer {
+    font-size: 10px;
+    font-weight: 400;
+  }
+  .music-image {
+    height: 110px;
+    width: 110px;
+    border-radius: 55px;
+    object-fit: cover;
+    animation: animateIMG 0.5s linear infinite;
+    cursor: pointer;
+  }
+  
+  .music-player-controller {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 232px;
+    height: 92px;
+    padding: 0 14px;
+  }
+  
+  .duration-music {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 164px;
+  }
+  
+  .music-bar {
+    width: 60%;
+    margin-top: 4px;
+    outline: none;
+    filter: hue-rotate(80deg);
+    cursor: pointer;
+  }
+  
+  .controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4px;
+    width: 92px;
+    height: 40px;
+  }
+  
+  .controls .previous,
+  .controls .next {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .controls .play,
+  .controls .pause {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .controls .previous,
+  .controls .next,
+  .controls .play,
+  .controls .pause {
+    cursor: pointer;
+  }
+}

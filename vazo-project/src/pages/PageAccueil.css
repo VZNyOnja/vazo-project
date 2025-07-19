@@ -57,14 +57,15 @@
   flex-direction: column;
   margin-left: 24vh;
   margin-right: 0;
+  position: relative;
 }
 
 .importer-fichier {
   display: flex;
-  justify-content: flex-end;
-  width: 74%;
-  margin-top: 16px;
   text-decoration: none;
+  position: absolute;
+  top: 3vh;
+  right: 12vw;
 }
 
 .importer-fichier-button {
@@ -113,4 +114,109 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 28px;
+}
+
+@media (max-width: 1384px) {
+  .welcoming h1 {
+    font-family: "Raleway", sans-serif;
+    font-size: 32px;
+    margin: 0;
+  }
+  
+  .welcoming h4 {
+    font-family: "Fira sans", sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 24px;
+  }
+
+  .videos-accueil {
+    display: flex;
+    flex-direction: column;
+    /* width: 300px; */
+  }
+  
+  .example {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+  
+  .video1,
+  .video3 {
+    width: 250px;
+    height: 32vh;
+  }
+}
+
+@media (min-width: 1192px) and (max-width: 1383px) {
+  .welcoming h1 {
+    font-family: "Raleway", sans-serif;
+    font-size: 32px;
+    margin: 0;
+  }
+  
+  .welcoming h4 {
+    font-family: "Fira sans", sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 24px;
+  }
+  
+  .videos-accueil {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+  
+  .video1,
+  .video3 {
+    width: 260px;
+    height: 32vh;
+  }
+
+  .video2 {
+    height: 32vh;
+  }
+}
+
+@media (max-width: 1191px) {
+  .welcoming h1 {
+    font-family: "Raleway", sans-serif;
+    font-size: 32px;
+    margin: 0;
+  }
+  
+  .welcoming h4 {
+    font-family: "Fira sans", sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 24px;
+  }
+  
+  .videos-accueil {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .video1,
+  .video3 {
+    width: 200px;
+    height: 32vh;
+  }
+
+  .video2 {
+    height: 32vh;
+  }
 }

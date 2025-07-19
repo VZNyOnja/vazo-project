@@ -84,3 +84,9 @@
 .headerHomepage .logo-ispm {
   width: 64px;
 }
+
+@media (max-width: 1040px) {
+  .headerHomepage {
+    width: 616px;
+  }
+}

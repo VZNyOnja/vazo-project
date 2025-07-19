@@ -6,7 +6,6 @@
   margin-left: 30vh;
   margin-right: 40vh;
   padding-left: 2vh;
-  /* background-color: red; */
 }
 
 .playlist-container {
@@ -107,4 +106,83 @@
 .manage-music .menu {
   margin-right: 8px;
   cursor: pointer;
+}
+
+@media (min-width: 1092.1px) and (max-width: 1535.9px) {
+  .playlist {
+    height: 52vh;
+    margin-left: 36vh;
+    padding-left: 2vh;
+  }
+}
+
+@media (min-width: 1092px) and (max-width: 1296px) {
+  .info-music {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 6;
+  }
+  
+  .music {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60vw;
+    height: 88px;
+    background-color: rgb(242, 242, 237);
+    border-radius: 12px;
+    margin-bottom: 4px;
+  }
+  
+  .manage-music {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+  }
+  
+  .manage-music .duration {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    color: rgb(36, 34, 34);
+  }
+  
+  .manage-music .menu {
+    cursor: pointer;
+  }
+  
+  .playlist {
+    height: 52vh;
+    margin-left: 36vh;
+    padding-left: 2vh;
+  }
+}
+
+@media (max-width: 1091.9px) {
+  .playlist {
+    height: 52vh;
+    margin-left: 36vh;
+    padding-left: 2vh;
+  }
+
+  .music-list {
+    max-width: 55vw;
+    height: 44vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    
+  .music {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 54vw;
+    height: 88px;
+    background-color: rgb(242, 242, 237);
+    border-radius: 12px;
+    margin-bottom: 4px;
+  }
+  }
 }

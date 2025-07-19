@@ -1,7 +1,7 @@
 import { HomepageHeader } from "../components/HomepageHeader";
-import './Homepage.css';
 import { NavLink } from 'react-router';
 import ImageSlider from "./ImageSlider";
+import './Homepage.css';
 
 export function Homepage() {
   return (

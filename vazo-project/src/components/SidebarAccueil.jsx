@@ -5,7 +5,7 @@ export function SidebarAccueil() {
   const menuItems = [{
     path: "/accueil",
     icon: "/images/accueil.png",
-    iconName: "Acceuil",
+    iconName: "Accueil",
     alt: "Icône d'accueil"
   }, {
     path: "/projet",

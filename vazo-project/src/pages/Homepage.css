@@ -71,3 +71,12 @@
   margin-top: 64px;
   cursor: pointer;
 }
+
+@media (max-width: 919.9px) {
+  .introducing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 400px;
+  }
+}

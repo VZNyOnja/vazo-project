@@ -18,8 +18,8 @@ const ImageSlider = () => {
     <div
       className="relative overflow-hidden"
       style={{
-        width: "400px", // fixe la largeur
-        height: "300px", // fixe la hauteur
+        width: "400px",
+        height: "300px"
       }}
     >
       <AnimatePresence mode="wait">

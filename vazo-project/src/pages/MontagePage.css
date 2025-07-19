@@ -126,9 +126,15 @@
   width: 1000px;
   height: 72px;
   background-color: #EFEFEF;
-
+  
   position: fixed;
   bottom: 4vh;
+}
+
+@media (max-width: 1231px) {
+  .timeline {
+    width: 600px;
+  }
 }
 
 .play-mark {
@@ -164,4 +170,53 @@
   font-family: "Fira Sans", sans-serif;
   font-size: 12px;
   font-weight: 400;
+}
+
+@media (max-width: 833px) {
+  .audio-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    padding: 4px 48px;
+    margin-bottom: 24px;
+    background-color: #EFEFEF;
+    
+    position: fixed;
+    bottom: 13vh;
+  }
+  
+  .control-icon {
+    width: 16px;
+    cursor: pointer;
+  }
+  
+  .timeline {
+    width: 400px;
+  }
+  
+  .playzone {
+    width: 20px;
+    margin-top: -20px;
+    margin-left: 5px;
+  }
+  
+  .line {
+    width: 2px;
+    height: 64px;
+  }
+  
+  .time {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  
+  .time-ms {
+    font-family: "Fira Sans", sans-serif;
+    font-size: 8px;
+    font-weight: 400;
+  }
 }
